@@ -4,8 +4,12 @@
 
 #gifzone {
   background-color: bisque;
+  margin: 2px;
+  padding: 5px;
 }
 
 #searchzone {
   background-color: beige;
+  margin: 2px;
+  padding: 5px;
 }
