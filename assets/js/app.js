@@ -3,7 +3,19 @@
 // sQdRRctfFw20rFHJs2Hm49aWOfHWzHqY
 //////////////////////////////////
 
-var topics = [];
+var topics = ["pork", "bork", "fork"];
+
+function renderButtons() {
+  $("#gif-buttons").empty();
+
+  for (i = 0; i < topics.length; i++) {
+  var topicName = topics[i];
+  $("#gif-buttons").append("<button> " + topicName + " </button>");
+
+  };
+};
+
+renderButtons();
 
 $("#submitBtn").on("click", function(event) {
 
