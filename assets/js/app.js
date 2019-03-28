@@ -57,16 +57,27 @@ function displayGifs () {
 
   event.preventDefault();
 
-  var gif = $(this).attr("data-value");
+  var gifName = $(this).attr("data-value");
 
-  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=sQdRRctfFw20rFHJs2Hm49aWOfHWzHqY&limit=10&offset=0&rating=G&lang=en"
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifName + "&api_key=sQdRRctfFw20rFHJs2Hm49aWOfHWzHqY&limit=10&offset=0&rating=G&lang=en"
 
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
+      console.log(queryURL);
       console.log(response);
+      console.log(response.data[0].rating);
 
+      var gifDiv = $("<div class'gif'>");
+      var rating = response.data[0].rating;
+      var p = $("<p>").text("Rating: " + rating);
+      gifDiv.append(p);
+
+      var gifURL = response.data[0].images.fixed_width.url
+      var gif = $("<img>").attr("src", gifURL);
+      gifDiv.append(gif);
+      $("#gif-onpage").prepend(gifDiv);
 
       });
 
