@@ -10,17 +10,19 @@
 
 <body>
 
-  <div class="jumbotron" id="header">
-    <div class="text-center">
-      <h1>Gifs Galore</h1>
-      <div id="gif-buttons"></div>
+  <div class="container">
+    <div class="jumbotron" id="header">
+      <div class="text-center">
+        <h1>Gifs Galore</h1>
+        <div id="gif-buttons"></div>
+      </div>
     </div>
   </div>
 
   <div class="container">
     <div class="row">
 
-      <div class="col-md-8" id="gifzone">
+      <div class="col-md-9  " id="gifzone">
         <h4>Gifs will populate here</h4>
         <div id="gifs-onpage"></div>
       </div>
@@ -28,12 +30,12 @@
       <div class="col-md-3" id="searchzone">
         <h4>Add a button!</h4>
         <form>
-            <div class="form-group">
-              <input type="" class="form-control" id="gif-input" placeholder="anything you want">
-            </div>
-            <input type="submit" class="btn btn-primary" id="submit-btn" value=" + "></input>
-            <input type="submit" class="btn btn-primary" id="remove-btn" value=" - "></input>
-          </form>
+          <div class="form-group">
+            <input type="text" class="form-control" id="gif-input" placeholder="anything you want">
+          </div>
+          <input type="submit" class="btn btn-primary" id="submit-btn" value=" + "></input>
+          <input type="submit" class="btn btn-secondary" id="remove-btn" value=" - "></input>
+        </form>
       </div>
 
     </div>

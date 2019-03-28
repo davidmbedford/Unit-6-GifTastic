@@ -12,20 +12,27 @@ function renderButtons() {
   $("#gif-buttons").empty();
 
   for (i = 0; i < topics.length; i++) {
-  var topicName = topics[i];
-  $("#gif-buttons").append("<button> " + topicName + " </button>");
-    };
+  //var topicName = topics[i];
+  //$("#gif-buttons").append("<button> " + topicName + " </button>");
+  //  };
+  var g = $("<button>");
+  g.addClass("gif");
+  g.attr("data-value", topics[i]);
+  g.text(topics[i]);
+  $("#gif-buttons").append(g);
+  };
 
   console.log(topics)
-
   };
+
+
 
 // provides functionality for submit(+) button
 $("#submit-btn").on("click", function(event) {
 
   event.preventDefault();
 
-  var gifName  = $("#gif-input").val().trim();
+  var gifName = $("#gif-input").val().trim();
 
   topics.push(gifName);
 
