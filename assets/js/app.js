@@ -68,18 +68,20 @@ function displayGifs () {
       console.log(queryURL);
       console.log(response);
       console.log(response.data[0].rating);
+      var array = response.data
 
-      var gifDiv = $("<div class'gif'>");
-      var rating = response.data[0].rating;
-      var p = $("<p>").text("Rating: " + rating);
-      gifDiv.append(p);
+      for (i = 0; i < array.length; i++){
+        var gifDiv = $("<div class'gif'>");
+        var rating = response.data[i].rating;
+        var p = $("<p>").text("Rating: " + rating);
+        gifDiv.append(p);
 
-      var gifURL = response.data[0].images.fixed_width.url
-      var gif = $("<img>").attr("src", gifURL);
-      gifDiv.append(gif);
-      $("#gif-onpage").prepend(gifDiv);
-
-      });
+        var gifURLMotion = response.data[i].images.fixed_width.url
+        var gif = $("<img>").attr("src", gifURLMotion);
+        gifDiv.append(gif);
+        $("#gif-onpage").prepend(gifDiv);
+      };
+    });
 
   };
 
