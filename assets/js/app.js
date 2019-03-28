@@ -7,6 +7,7 @@ $(document).ready(function() {
 
 var topics = ["pork", "bork", "fork"];
 
+// sets buttons to page
 function renderButtons() {
   $("#gif-buttons").empty();
 
@@ -19,6 +20,7 @@ function renderButtons() {
 
   };
 
+// provides functionality for submit(+) button
 $("#submit-btn").on("click", function(event) {
 
   event.preventDefault();
@@ -31,6 +33,20 @@ $("#submit-btn").on("click", function(event) {
 
   });
 
+// provides functionality for remove(-) button
+$("#remove-btn").on("click", function(event) {
+
+  event.preventDefault();
+
+  var gifName = $("#gif-input").val().trim();
+
+  topics.pop(gifName);
+
+  renderButtons();
+
+  });
+
+// provides functionality for the gif-api buttons at the top eof the page
 $("<button>").on("click", function(event) {
 
   event.preventDefault();
@@ -48,6 +64,7 @@ $("<button>").on("click", function(event) {
 
   });
 
+// call of array onstart
 renderButtons();
 
 });
